@@ -38,6 +38,7 @@ input {
     display: none;
 }
 .ac__name {
+    transition: 0.3s;
 }
 .ac__icon {
     transition: 0.5s;
@@ -47,7 +48,7 @@ input {
     justify-content: center;
     align-items: center;
     height: 0;
-    transition: 0.5s;
+    transition: 0.8s;
     padding: 0 0 0.5% 0;
 }
 .ac__image {
@@ -90,19 +91,29 @@ input {
     }
     .ac__name {
         font-size: 2em;
+        color: #0d1fbf;
     }
-}
+    .ac__icon {
+        opacity: 0;
+    }
 
 
-@media (min-width: 1920px) {
-    .wrapper {
-        padding: 0;
+
+    .accordion__container input:checked ~ .ac__top .ac__name {
+        color: #000;
     }
-    .title {
-        padding: 0;
-        font-size: 2em;
+
+    .ac_wrapper:hover .ac__name {
+        color: #000;
     }
-    .ac__name {
-        font-size: 2em;
+    .ac_wrapper:hover .ac__icon {
+        opacity: 1;
+    }
+
+    .accordion__container:hover .ac__icon {
+        transform: rotate(45deg);
+    }
+    .accordion__container:hover .ac__panel {
+        height: 40vh;
     }
 }
