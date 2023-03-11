@@ -2,12 +2,6 @@
     margin: 0;
     padding: 0
 }
-/* html {
-    height: 100%;
-  }
-  body {
-    height: 100%;
-  } */
 html, body {
     height: 100%;
 }
@@ -20,14 +14,14 @@ html, body {
     text-align: center;
 }
 .ac_wrapper {
-    max-width: 80%;
+    max-width: 95%;
     margin: 0 auto;
 }
 .accordion__container {
     display: block;
-    cursor: pointer;
-    border-top: 3px solid #666f70;
+    border-top: 0.2em solid #666f70;
     transition: 0.5s;
+    cursor: pointer;
 }
 .ac__top {
     display: flex;
@@ -40,6 +34,7 @@ input {
 }
 .ac__name {
     transition: 0.3s;
+    color: #0d1fbf;
 }
 .ac__icon {
     transition: 0.8s;
@@ -62,12 +57,14 @@ input {
     height: 100%;
     width: 100%;
 }
-
 .accordion__container input:checked ~ .ac__panel {
     height: 40vh;
 }
 .accordion__container input:checked ~ .ac__top .ac__icon {
     transform: rotate(45deg);
+}
+.accordion__container input:checked ~ .ac__top .ac__name {
+    color: #000;
 }
 .accordion__container:active {
     opacity: 0.7;
@@ -79,11 +76,20 @@ input {
     background-color: #0d1fbf;
 }
 
+@media (min-width: 425px) {
+    .ac_wrapper {
+        max-width: 90%;
+    }
+    .title {
+        padding: 0 0 2%;
+        font-size: 2.1em;
+    }
+    .ac__name {
+        font-size: 2.1em;
+    }
+}
 
-
-
-
-@media (min-width: 820px) {
+@media (min-width: 768px) {
     .wrapper {
         padding: 10% 0 0;
     }
@@ -96,7 +102,7 @@ input {
     }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1024px) {
     .wrapper {
         padding: 0;
     }
@@ -104,36 +110,28 @@ input {
         padding: 0;
         font-size: 2em;
     }
+    .ac_wrapper {
+        max-width: 80%;
+    }
     .ac__name {
         font-size: 2em;
-        color: #0d1fbf;
     }
     .ac__icon {
         opacity: 0;
     }
-
-
-
-    .accordion__container input:checked ~ .ac__top .ac__name {
-        color: #000;
-    }
-
     .ac_wrapper:hover .ac__name {
         color: #000;
     }
     .ac_wrapper:hover .accordion__container:active .ac__name {
         color: #0d1fbf;
     }
-
     .ac_wrapper:hover .ac__icon {
         opacity: 1;
     }
-
     .accordion__container:hover .ac__icon {
         transform: rotate(45deg);
     }
     .accordion__container:hover .ac__panel {
         height: 40vh;
     }
-
 }
