@@ -1,0 +1,142 @@
+* {
+    margin: 0;
+    padding: 0
+}
+html, body {
+    height: 100%;
+}
+.wrapper {
+    box-sizing: border-box;
+    min-height: 100%;
+    background-color: #9daeb0;
+}
+.title {
+    text-align: center;
+}
+.ac_wrapper {
+    max-width: 95%;
+    margin: 0 auto;
+}
+.accordion__container {
+    display: block;
+    border-top: 0.2em solid #666f70;
+    transition: 0.5s;
+}
+.ac__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5% 5%;
+}
+input {
+    display: none;
+}
+.ac__name {
+    transition: 0.3s;
+    color: #0d1fbf;
+}
+.ac__icon {
+    transition: 0.8s;
+    height: 1.9em;
+    border-radius: 50%;
+}
+.ac__panel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 0;
+    transition: 0.8s;
+    padding: 0 0 0.5% 0;
+}
+.ac__image {
+    height: 100%;
+    width: auto;
+}
+.ac__image img {
+    height: 100%;
+    width: 100%;
+}
+.accordion__container input:checked ~ .ac__panel {
+    height: 40vh;
+}
+.accordion__container input:checked ~ .ac__top .ac__icon {
+    transform: rotate(45deg);
+}
+.accordion__container input:checked ~ .ac__top .ac__name {
+    color: #000;
+}
+
+@media (min-width: 425px) {
+    .ac_wrapper {
+        max-width: 90%;
+    }
+    .title {
+        padding: 0 0 2%;
+        font-size: 2.1em;
+    }
+    .ac__name {
+        font-size: 2.1em;
+    }
+}
+
+@media (min-width: 768px) {
+    .wrapper {
+        padding: 10% 0 0;
+    }
+    .title {
+        padding: 0 0 5%;
+        font-size: 3em;
+    }
+    .ac__name {
+        font-size: 3em;
+    }
+}
+
+@media (min-width: 1024px) {
+    .wrapper {
+        padding: 0;
+    }
+    .title {
+        padding: 0;
+        font-size: 2em;
+    }
+    .ac_wrapper {
+        max-width: 80%;
+    }
+    .ac__name {
+        font-size: 2em;
+    }
+}
+
+@media (hover: hover) {
+    .ac__icon {
+        opacity: 0;
+    }
+    .ac_wrapper:hover .ac__name {
+        color: #000;
+    }
+    .ac_wrapper:hover .accordion__container:active .ac__name {
+        color: #0d1fbf;
+    }
+    .ac_wrapper:hover .ac__icon {
+        opacity: 1;
+    }
+    .accordion__container:hover .ac__icon {
+        transform: rotate(45deg);
+    }
+    .accordion__container:hover .ac__panel {
+        height: 40vh;
+    }
+    .accordion__container {
+        cursor: pointer;
+    }
+    .accordion__container:active {
+        opacity: 0.7;
+    }
+    .accordion__container:active .ac__name {
+        color: #0d1fbf;
+    }
+    .accordion__container:active .ac__icon {
+        background-color: #0d1fbf;
+    }
+}
