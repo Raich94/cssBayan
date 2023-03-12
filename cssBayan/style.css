@@ -21,7 +21,6 @@ html, body {
     display: block;
     border-top: 0.2em solid #666f70;
     transition: 0.5s;
-    cursor: pointer;
 }
 .ac__top {
     display: flex;
@@ -66,15 +65,6 @@ input {
 .accordion__container input:checked ~ .ac__top .ac__name {
     color: #000;
 }
-.accordion__container:active {
-    opacity: 0.7;
-}
-.accordion__container:active .ac__name {
-    color: #0d1fbf;
-}
-.accordion__container:active .ac__icon {
-    background-color: #0d1fbf;
-}
 
 @media (min-width: 425px) {
     .ac_wrapper {
@@ -116,6 +106,9 @@ input {
     .ac__name {
         font-size: 2em;
     }
+}
+
+@media (hover: hover) {
     .ac__icon {
         opacity: 0;
     }
@@ -133,5 +126,17 @@ input {
     }
     .accordion__container:hover .ac__panel {
         height: 40vh;
+    }
+    .accordion__container {
+        cursor: pointer;
+    }
+    .accordion__container:active {
+        opacity: 0.7;
+    }
+    .accordion__container:active .ac__name {
+        color: #0d1fbf;
+    }
+    .accordion__container:active .ac__icon {
+        background-color: #0d1fbf;
     }
 }
